@@ -3,7 +3,7 @@
 int main() {
     // Object declaration
     Sort sort;
-    sort.selection_sort();
+    sort.merge_sort(sort.elements_List);
     sort.print();
 
     return 0;

@@ -6,7 +6,7 @@
 #include <vector>
 
 class Sort {
-    private:
+    public:
         std::vector<int> elements_List;
         int num_of_elements;
 
@@ -14,11 +14,12 @@ class Sort {
         int get_num_of_elements();
         std::vector<int> get_elements_List();
 
-    public:
         //default constructor
         Sort();
         // Setter and getter for member variables
         void selection_sort();
+        void merge_sort(std::vector<int>& list);
+        void final_merge(std::vector<int>& list, std::vector<int> left, std::vector<int> right);
         void print();
         
 
