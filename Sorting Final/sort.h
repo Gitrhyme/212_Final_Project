@@ -18,6 +18,7 @@ class Sort {
         Sort();
         // Setter and getter for member variables
         void selection_sort();
+        void InsertionSort();
         void merge_sort(std::vector<int>& list);
         void final_merge(std::vector<int>& list, std::vector<int> left, std::vector<int> right);
         void print();
