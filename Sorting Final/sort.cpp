@@ -94,6 +94,18 @@ void Sort::final_merge(std::vector<int>& list, std::vector<int> left, std::vecto
 
 }
 
+void Sort::InsertionSort(){
+    for (int i=1; i<num_of_elements; i++){
+        int j = i-1;
+        int x = A[i];
+        while (j>-1 && A[j] > x){
+            A[j+1] = A[j];
+            j--;
+        }
+        A[j+1] = x;
+    }
+}
+
 void Sort::print(){
     for (int i = 0; i < num_of_elements; i++)
     {
