@@ -93,6 +93,26 @@ void Sort::final_merge(std::vector<int>& list, std::vector<int> left, std::vecto
     }
 
 }
+void Sort::partition(std::vector<int>& list, int low, int high){
+    int pivot = list[high];
+    int i = low - 1;
+    for (int j=low; j<=high-1; j++){
+        if (list[j] < pivot){
+            i++;
+            std::swap(&list[i], &list[j]);
+        }
+    }
+    std::swap(&list[i+1], &list[high]);
+    return i+1;
+}
+
+void Sort::Quicksort(std::vector<int>& list, int low, int high){
+    if(low < high){
+        int part = partition(list, low, high);
+        Quicksort(list,low,part-1);
+        Quicksort(list,part+1,high);
+    }
+}
 
 void Sort::InsertionSort(){
     for (int i=1; i<num_of_elements; i++){
