@@ -45,6 +45,7 @@ inline void Benchmark::sequenceForBenchMark() {
 }
 
 inline void Benchmark::beginBenchmark(char seq) {
+    //sequences of different numbers
     int arr[13] = {100, 250, 500, 750, 1000, 1250, 2500, 3750, 5000, 6250, 7500, 8750, 10000};
 
     std::fstream fileOut;
@@ -63,7 +64,7 @@ inline void Benchmark::beginBenchmark(char seq) {
     }
 
     fileOut << "\t\t" << 100 << "\t\t" << 250 << "\t\t" << 500 << "\t\t" << 750 << "\t\t" << 1000 << "\t" << 1250 << "\t" << 2500 << "\t" << 3750 << "\t" << 5000 << "\t" << 6250 << "\t" << 7500 << "\t" << 8750 << "\t" << 10000 << "\n";
-
+    //generates the time taken of each sort of different sequence sizes
     Timer timerr;
     std::vector<double> timeCount;
     for(int size = 0; size < 13; size++) {
