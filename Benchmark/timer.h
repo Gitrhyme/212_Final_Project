@@ -15,8 +15,6 @@ class Timer {
 		double duration;
 
 	public:
-		Timer();
-		~Timer();
 		void start();
 		void stop();
 		double getDuration();
@@ -36,4 +34,4 @@ inline double Timer::getDuration() {
 	return duration;
 }
 
-#endif;
+#endif
