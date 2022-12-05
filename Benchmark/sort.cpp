@@ -42,6 +42,7 @@ int Sort::get_num_of_elements(){
     return 0;
 }
 
+//menu option to choose what algorithm to be implemented.
 int Sort::printMenu() {
     std::cout << "\nSorting Algorithm Project\n";
     std::cout << "-----------------------------------------\n";
@@ -80,6 +81,7 @@ int Sort::printMenu() {
     return option;
 }
 
+// menu option for user to choose a sequence
 char Sort::getSequence() {
     char s;
     if(option != 5) {
@@ -95,7 +97,7 @@ char Sort::getSequence() {
 
     return s;
 }
-
+// function to generate vectors
 void Sort::generateVector() {
     if(option != 5) {
         // Providing a seed value
@@ -115,7 +117,7 @@ void Sort::generateVector() {
         }
 
         std::cout << "\nBefore Sorting:\n";
-
+        //prints out the generated vector
         for(int i = 0; i < elements_List.size(); i++) {
             std::cout << elements_List[i] << "   ";
         }
@@ -124,10 +126,14 @@ void Sort::generateVector() {
     
 }
 
+// code for insertion sort
 void Sort::InsertionSort() {
+    // first for loop to 
     for(int i = 0; i < num_of_elements; i++) {
         int j = i - 1;
         int x = elements_List[i];
+        //move the elements that are greater than the key to one position ahead 
+        // of their current positions
         while(j > -1 && elements_List[j] > x) {
             elements_List[j + 1] = elements_List[j];
             j--;
@@ -135,6 +141,7 @@ void Sort::InsertionSort() {
         elements_List[j + 1] = x;
     }
     std::cout << "\nAfter Sorting:\n";
+    //loop to print out the sorted array
     for(int i = 0; i < elements_List.size(); i++) {
         std::cout << elements_List[i] << "   ";
     }
@@ -142,37 +149,50 @@ void Sort::InsertionSort() {
 }
 
 void Sort::BubbleSort() {
+    //nested loop to traverse the input array using i and j 
     for(int i = 0; i < num_of_elements; i++) {
         for(int j = 0; j < num_of_elements - i - 1; j++) {
+            //if the list at j is greater than the list at (j+1) 
+            // then swap these adjacent elements
             if(elements_List[j] > elements_List[j + 1]) {
                 std::swap(elements_List[j], elements_List[j + 1]);
             }
         }
     }
     std::cout << "\nAfter Sorting:\n";
+    //loop to print the sorted array
     for(int i = 0; i < elements_List.size(); i++) {
         std::cout << elements_List[i] << "   ";
     }
     std::cout << std::endl << std::endl;
 }
 
+//this function implements the quicksort 
+// low represents the starting index
+// high represents the ending index
 void Sort::QuickSort(std::vector<int>& list, int low, int high){
     if(low < high){
+        // part is the partioning index 
         int part = Partition(list, low, high);
+        // sorts elements before and after partition 
         QuickSort(list, low, part - 1);
         QuickSort(list, part + 1, high);
     }
 }
 
 int Sort::Partition(std::vector<int>& list, int start, int end){
+    // pivot
     int pivot = list[end];
     int i = start - 1;
     for (int j=start; j<=end-1; j++){
+        //if the current element is smaller than the pivot 
         if (list[j] < pivot){
+            // increment index of the smaller element
             i++;
             std::swap(list[i], list[j]);
         }
     }
+    // then swap
     std::swap(list[i+1], list[end]);
     return i+1;
 }
@@ -203,9 +223,12 @@ void Sort::MergeSort(std::vector<int>& list){
 void Sort::FinalMerge(std::vector<int>& list, std::vector<int> left, std::vector<int> right){
     int left_size = left.size();
     int right_size = right.size();
-
+    
+    // initial index of first sub-array ----  left_idx
+    // initial index of second sub-array ----- right_idx
+    // initial index of merged array ----- list_idx
     int left_idx = 0, right_idx = 0, list_idx = 0;
-
+    // merge the list vector back into vectors{left and right}
     while( left_idx < left_size && right_idx < right_size){
         if(left[left_idx] <= right[right_idx]){
             list[list_idx] = left[left_idx];
@@ -217,11 +240,13 @@ void Sort::FinalMerge(std::vector<int>& list, std::vector<int> left, std::vector
         }
         list_idx++;
     }
+    //copy the remaining elements of left vector, if there are any
     while(left_idx < left_size){
         list[list_idx] = left[left_idx];
         left_idx++;
         list_idx++;
     }
+    //copy the remianing elements of right vector, if there are any
     while(right_idx < right_size){
         list[list_idx] = right[right_idx];
         right_idx++;
