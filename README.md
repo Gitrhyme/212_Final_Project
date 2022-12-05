@@ -31,4 +31,7 @@ Hit 4 for Quick Sort
 Hit 5 for Selection Sort
 
 What Are You Waiting For? Get To Sorting!
+![sort_algo](https://user-images.githubusercontent.com/90435153/205680629-815e0cc5-bb0f-4254-9b00-b91cf879bdd3.gif)
+
+
 
