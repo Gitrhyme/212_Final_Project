@@ -5,8 +5,10 @@
 #include <random>
 #include <unistd.h>
 
+//controls speed of program
 unsigned int microsecond = 1000;
 
+//creates unsorted vector of random values
 std::vector<int> vect()
 {
     std::random_device rd;
@@ -19,6 +21,7 @@ std::vector<int> vect()
     return v;
 }
 
+//creates bar graph
 void draw_state(std::vector<int> &v, std::vector<sf::RectangleShape> &bars, int red, int blue, sf::RenderWindow &window)
 {
     usleep(microsecond * 20);
@@ -48,6 +51,7 @@ void draw_state(std::vector<int> &v, std::vector<sf::RectangleShape> &bars, int 
     window.display();
 }
 
+//helper function for quick sort
 int partition(std::vector<int> &list, int low, int high, sf::RenderWindow &window, std::vector<sf::RectangleShape> &bars)
 {
     int pivot = list[high];
@@ -65,6 +69,7 @@ int partition(std::vector<int> &list, int low, int high, sf::RenderWindow &windo
     return i + 1;
 }
 
+//quick sort algorithm
 void Quicksort(std::vector<int> &list, int low, int high, sf::RenderWindow &window, std::vector<sf::RectangleShape> &bars)
 {
     if (low < high)
@@ -75,6 +80,7 @@ void Quicksort(std::vector<int> &list, int low, int high, sf::RenderWindow &wind
     }
 }
 
+//helper function for merge sort
 void final_merge(std::vector<int> &list, std::vector<int> left, std::vector<int> right, sf::RenderWindow &window, std::vector<sf::RectangleShape> &bars)
 {
     int left_size = left.size();
@@ -111,6 +117,7 @@ void final_merge(std::vector<int> &list, std::vector<int> left, std::vector<int>
     }
 }
 
+//merge sort algorithm
 void merge_sort(std::vector<int> &list, sf::RenderWindow &window, std::vector<sf::RectangleShape> &bars)
 {
     int list_size = list.size();
@@ -138,6 +145,7 @@ void merge_sort(std::vector<int> &list, sf::RenderWindow &window, std::vector<sf
     final_merge(list, left, right, window, bars);
 }
 
+//insertion sort algorithm
 void InsertionSort(std::vector<int> &v, sf::RenderWindow &window, std::vector<sf::RectangleShape> &bars)
 {
     for (int i = 1; i < v.size(); i++)
@@ -154,6 +162,7 @@ void InsertionSort(std::vector<int> &v, sf::RenderWindow &window, std::vector<sf
     }
 }
 
+//selection sort algorithm
 void SelectionSort(std::vector<int> &v, sf::RenderWindow &window, std::vector<sf::RectangleShape> &bars)
 {
     for (unsigned int i = 0; i < v.size(); i++)
@@ -171,6 +180,7 @@ void SelectionSort(std::vector<int> &v, sf::RenderWindow &window, std::vector<sf
     }
 }
 
+//bubble sort algorithm
 void BubbleSort(std::vector<int> &v, sf::RenderWindow &window, std::vector<sf::RectangleShape> &bars)
 {
 
@@ -188,6 +198,7 @@ void BubbleSort(std::vector<int> &v, sf::RenderWindow &window, std::vector<sf::R
     }
 }
 
+//creates bars at set length for the graph window
 std::vector<sf::RectangleShape> barVector(std::vector<int> v, int height)
 {
     std::vector<sf::RectangleShape> bars;
