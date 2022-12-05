@@ -1,4 +1,6 @@
-This program was made using C++ and SFML library.
+## CSC 212 Final Project: Sorting Algorithms
+
+This visualizer program was made using C++ and SFML library.
 
 **STEPS TO RUN PROGRAM:**
 
@@ -12,8 +14,8 @@ Just download and run the executable play file.
 2. Locate and open folder in IDE
 3. Add or link SFML include and lib folders
 4. Open terminal in IDE
-5. Type the command "make game"
-6. Run using "./play"
+5. Type the command `make game`
+6. Run using `./play`
 
 **What program has to offer:**
 
@@ -40,4 +42,11 @@ Hit 5 for Selection Sort
 ![sort_algo](https://user-images.githubusercontent.com/90435153/205680629-815e0cc5-bb0f-4254-9b00-b91cf879bdd3.gif)
 
 
+
+### Sorting Algorithm Benchmarking
+
+1. Clone the repository
+2. Compile all .cpp files in the `Benchmarking` folder with `g++ main.cpp sort.cpp -o main`.
+3. Run the executable with `./main`.
+4. Choose the sequence you want, and a .csv file (with runtime for all sorting algorithms versus various input sizes) will be created in your current directory :)
 
