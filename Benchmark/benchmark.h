@@ -139,14 +139,10 @@ inline void Benchmark::generateArrayforBenchmark(int seq, int size, std::vector<
         std::sort(benchQuick.begin(), benchQuick.end());
         std::sort(benchMerge.begin(), benchMerge.end());
     } else if(seq == 'b') {
-        std::sort(benchInsert.begin(), benchInsert.end());
-        std::sort(benchBubble.begin(), benchBubble.end());
-        std::sort(benchQuick.begin(), benchQuick.end());
-        std::sort(benchMerge.begin(), benchMerge.end());
-        std::reverse(benchInsert.begin(), benchInsert.end());
-        std::reverse(benchBubble.begin(), benchBubble.end());
-        std::reverse(benchQuick.begin(), benchQuick.end());
-        std::reverse(benchMerge.begin(), benchMerge.end());
+        std::sort(benchInsert.begin(), benchInsert.end(), std::greater<int>());
+        std::sort(benchBubble.begin(), benchBubble.end(), std::greater<int>());
+        std::sort(benchQuick.begin(), benchQuick.end(), std::greater<int>());
+        std::sort(benchMerge.begin(), benchMerge.end(), std::greater<int>());
     } else if(seq == 'd') {
         std::sort(benchInsert.begin(), (benchInsert.begin() + benchInsert.size() / 2) - 1);
         std::sort(benchBubble.begin(), (benchBubble.begin() + benchBubble.size() / 2) - 1);
