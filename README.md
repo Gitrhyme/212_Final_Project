@@ -48,5 +48,5 @@ Hit 5 for Selection Sort
 1. Clone the repository
 2. Compile all .cpp files in the `Benchmarking` folder with `g++ main.cpp sort.cpp -o main`.
 3. Run the executable with `./main`.
-4. Choose the sequence you want, and a .csv file (with runtime for all sorting algorithms versus various input sizes) will be created in your current directory :)
+4. Choose the sequence (sorted, random, reversed or partially sorted) you want, and a .csv file (with runtime for all sorting algorithms versus various input sizes) will be created in your current directory :)
 
