@@ -1,5 +1,9 @@
 ## CSC 212 Final Project: Sorting Algorithms
 
+![Goals Screenshot](https://github.com/samgitmaster/212_Final_Project/blob/main/image.png)
+
+### Algorithm Visualizer
+
 This visualizer program was made using C++ and SFML library.
 
 **STEPS TO RUN PROGRAM:**
