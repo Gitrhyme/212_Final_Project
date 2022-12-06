@@ -1,8 +1,8 @@
-## CSC 212 Final Project: Sorting Algorithms
+# CSC 212 Final Project: Sorting Algorithms
 
 ![Goals Screenshot](https://github.com/samgitmaster/212_Final_Project/blob/main/image.png)
 
-### Algorithm Visualizer
+## Algorithm Visualizer
 
 This visualizer program was made using C++ and SFML library.
 
@@ -47,7 +47,7 @@ Hit 5 for Selection Sort
 
 
 
-### Sorting Algorithm Benchmarking
+## Sorting Algorithm Benchmarking
 
 1. Clone the repository
 2. Compile all .cpp files in the `Benchmarking` folder with `g++ main.cpp sort.cpp -o main`.
